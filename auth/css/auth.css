@@ -1,0 +1,692 @@
+/*=========================
+    GLOBAL
+=========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Inter,sans-serif;
+    background:#F8FAFC;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+}
+
+/*=========================
+    LEFT PANEL
+=========================*/
+
+.auth-left{
+
+    background:linear-gradient(
+    135deg,
+    #2563EB,
+    #1D4ED8,
+    #1E3A8A
+    );
+
+    min-height:100vh;
+
+    color:white;
+
+    padding:60px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.logo{
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.logo span{
+
+    color:#93C5FD;
+
+}
+
+.auth-left h1{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.auth-left p{
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    color:#E0E7FF;
+
+}
+
+.features{
+
+    margin-top:40px;
+
+}
+
+.feature{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.feature i{
+
+    font-size:1.5rem;
+
+    margin-right:15px;
+
+    color:#93C5FD;
+
+}
+
+/*=========================
+    DASHBOARD PREVIEW
+=========================*/
+
+.preview-card{
+
+    margin-top:40px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    padding:25px;
+}
+
+.preview-card h5{
+
+    margin-bottom:20px;
+}
+
+.preview-box{
+
+    background:white;
+
+    color:#0F172A;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+}
+
+/*=========================
+    RIGHT PANEL
+=========================*/
+
+.auth-right{
+
+    min-height:100vh;
+
+    background:#F8FAFC;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+/*=========================
+    LOGIN CARD
+=========================*/
+
+.auth-card{
+
+    width:100%;
+
+    max-width:450px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.08);
+
+}
+
+.auth-card h2{
+
+    color:#0F172A;
+
+    font-weight:700;
+
+}
+
+.auth-card p{
+
+    color:#64748B;
+
+    margin-bottom:25px;
+
+}
+
+/*=========================
+    FORM
+=========================*/
+
+.form-label{
+
+    font-weight:600;
+
+    color:#334155;
+
+}
+
+.form-control{
+
+    height:55px;
+
+    border-radius:12px;
+
+    border:1px solid #CBD5E1;
+
+}
+
+.form-control:focus{
+
+    box-shadow:none;
+
+    border-color:#2563EB;
+
+}
+
+/*=========================
+    OPTIONS
+=========================*/
+
+.auth-options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:20px 0;
+}
+
+.auth-options a{
+
+    color:#2563EB;
+
+    font-weight:600;
+}
+
+/*=========================
+    BUTTON
+=========================*/
+
+.btn-login{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563EB;
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.btn-login:hover{
+
+    background:#1D4ED8;
+
+    transform:translateY(-2px);
+}
+
+/*=========================
+    FOOTER LINKS
+=========================*/
+
+.bottom-link{
+
+    text-align:center;
+
+    margin-top:25px;
+
+}
+
+.bottom-link a{
+
+    color:#2563EB;
+
+    font-weight:600;
+}
+
+/*=========================
+    ALERT BOX
+=========================*/
+
+#loginMessage{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    font-weight:600;
+}
+
+/*=========================
+    DIVIDER
+=========================*/
+
+.divider{
+
+    text-align:center;
+
+    margin:25px 0;
+
+    position:relative;
+
+}
+
+.divider::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:40%;
+
+    height:1px;
+
+    background:#CBD5E1;
+
+    left:0;
+
+    top:50%;
+}
+
+.divider::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:40%;
+
+    height:1px;
+
+    background:#CBD5E1;
+
+    right:0;
+
+    top:50%;
+}
+
+/*=========================
+    RESPONSIVE
+=========================*/
+
+@media(max-width:992px){
+
+.auth-left{
+
+display:flex;
+padding:10px;
+
+}
+
+.auth-right{
+
+padding:20px;
+
+}
+
+.auth-card{
+
+padding:30px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.auth-card{
+
+padding:25px;
+
+border-radius:20px;
+
+}
+
+.auth-card h2{
+
+font-size:1.8rem;
+
+}
+
+.btn-login{
+
+height:50px;
+
+}
+
+.form-control{
+
+height:50px;
+
+}
+
+}
+
+.mobile-logo h1{
+
+font-size:2rem;
+font-weight:700;
+
+}
+
+.mobile-logo p{
+
+color:#64748B;
+font-size:14px;
+
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+body{
+    min-height:100vh;
+    background:#f8fafc;
+}
+
+.container-fluid,
+.row{
+    min-height:100vh;
+    margin:0;
+    padding:0;
+}
+
+.auth-left,
+.auth-right{
+    min-height:100vh;
+}
+
+/* =========================
+   LARGE SCREENS
+========================= */
+
+@media (min-width:1200px){
+
+.auth-card{
+    max-width:480px;
+}
+
+}
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width:991px){
+
+.auth-left{
+
+    min-height:300px;
+
+    padding:40px;
+
+}
+
+.auth-left h1{
+
+    font-size:2rem;
+
+}
+
+.preview-card{
+
+    margin-top:20px;
+
+}
+
+.auth-right{
+
+    padding:30px;
+
+}
+
+.auth-card{
+
+    max-width:100%;
+}
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+.auth-left{
+
+display:none;
+
+}
+
+.auth-right{
+
+padding:20px;
+
+min-height:100vh;
+
+align-items:center;
+
+}
+
+.auth-card{
+
+width:100%;
+
+max-width:100%;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.auth-card h2{
+
+font-size:28px;
+
+}
+
+.form-control{
+
+height:52px;
+
+font-size:16px;
+
+}
+
+.btn-login{
+
+height:52px;
+
+font-size:16px;
+
+}
+
+.auth-options{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:10px;
+
+}
+
+.auth-options input{
+
+margin-right:5px;
+
+}
+
+.preview-card{
+
+display:none;
+
+}
+
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width:480px){
+
+.auth-right{
+
+padding:10px;
+
+}
+
+.auth-card{
+
+padding:20px;
+
+border-radius:15px;
+
+}
+
+.auth-card h2{
+
+font-size:24px;
+
+}
+
+.auth-card p{
+
+font-size:14px;
+
+}
+
+.form-label{
+
+font-size:14px;
+
+}
+
+.form-control{
+
+height:48px;
+
+padding:12px;
+
+}
+
+.btn-login{
+
+height:48px;
+
+}
+
+.bottom-link{
+
+font-size:14px;
+
+}
+
+.divider{
+
+margin:20px 0;
+
+}
+
+}
+
+/* =========================
+   VERY SMALL DEVICES
+========================= */
+
+@media (max-width:360px){
+
+.auth-card{
+
+padding:15px;
+
+}
+
+.auth-card h2{
+
+font-size:22px;
+
+}
+
+.form-control{
+
+font-size:14px;
+
+}
+
+.btn-login{
+
+font-size:15px;
+
+}
+
+}

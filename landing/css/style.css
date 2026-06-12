@@ -1,0 +1,70 @@
+body{
+    font-family:Inter,sans-serif;
+    background:#F8FAFC;
+}
+
+h1,h2,h3,h4,h5{
+    font-family:Poppins,sans-serif;
+}
+
+.smart-navbar{
+    background:white;
+    box-shadow:0 2px 20px rgba(0,0,0,.08);
+}
+
+.navbar-brand{
+    color:#2563EB!important;
+    font-size:1.5rem;
+}
+
+.hero{
+    padding:150px 0 100px;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    font-weight:700;
+    color:#0F172A;
+}
+
+.hero p{
+    font-size:1.1rem;
+    color:#64748B;
+}
+
+.dashboard-preview{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.preview-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.preview-card:hover{
+    transform:translateY(-8px);
+}
+
+.btn{
+    border-radius:12px;
+    padding:12px 28px;
+}
+.trust-badges{
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+color:#10B981;
+
+font-weight:600;
+
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Login | SmartGrade</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <!-- LEFT SIDE -->
+
+            <div class="col-lg-6 auth-left">
+
+                <div class="logo">
+                    Smart<span>Grade</span>
+                </div>
+
+                <h1>
+                    Automated MCQ Assessment Platform
+                </h1>
+
+                <p>
+                    Create, manage and grade examinations with
+                    a secure and intelligent assessment system.
+                </p>
+
+                <div class="features">
+
+                    <div class="feature">
+                        <i class="bi bi-shield-check"></i>
+                        <span>Secure Authentication</span>
+                    </div>
+
+                    <div class="feature">
+                        <i class="bi bi-lightning-charge"></i>
+                        <span>Automated Grading</span>
+                    </div>
+
+                    <div class="feature">
+                        <i class="bi bi-bar-chart"></i>
+                        <span>Real-time Analytics</span>
+                    </div>
+
+                </div>
+
+                <div class="preview-card">
+
+                    <h5>Dashboard Preview</h5>
+
+                    <div class="preview-box">
+                        Active Exams : 25
+                    </div>
+
+                    <div class="preview-box">
+                        Students : 320
+                    </div>
+
+                    <div class="preview-box">
+                        Average Score : 87%
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+
+            <div class="col-lg-6 auth-right">
+<div class="d-lg-none text-center mb-4">
+
+<h2 class="logo">
+
+Smart<span>Grade</span>
+
+</h2>
+
+</div>
+                <div class="auth-card">
+
+                    <h2>Welcome Back</h2>
+
+                    <p>
+                        Sign in to continue to SmartGrade.
+                    </p>
+
+                    <form id="loginForm">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="password"
+                                placeholder="Enter your password"
+                                required>
+
+                        </div>
+
+                        <div class="auth-options">
+
+                            <div>
+
+                                <input
+                                    type="checkbox"
+                                    id="remember">
+
+                                <label for="remember">
+                                    Remember Me
+                                </label>
+
+                            </div>
+
+                            <a href="forgot-password.html">
+                                Forgot Password?
+                            </a>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn-login">
+
+                            <i class="bi bi-box-arrow-in-right"></i>
+
+                            Login
+
+                        </button>
+
+                    </form>
+
+                    <div
+                        id="loginMessage"
+                        class="mt-3">
+                    </div>
+
+                    <div class="divider">
+                        OR
+                    </div>
+
+                    <div class="bottom-link">
+
+                        Don't have an account?
+
+                        <a href="register.html">
+                            Create Account
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Supabase -->
+
+    <script type="module" src="../config/supabase.js"></script>
+
+    <!-- Services -->
+
+    <script type="module" src="../shared/js/services/authService.js"></script>
+
+    <script type="module" src="../shared/js/services/profileService.js"></script>
+
+    <!-- Login Logic -->
+
+    <script type="module" src="js/login.js"></script>
+
+</body>
+
+</html>
