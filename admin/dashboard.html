@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>SmartGrade Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<h2>SmartGrade</h2>
+
+<p>Academic ERP</p>
+
+</div>
+
+<ul>
+
+<li class="active">
+<a href="#">
+<i class="bi bi-grid"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="students.html">
+<i class="bi bi-people"></i>
+Students
+</a>
+</li>
+
+<li>
+<a href="lecturers.html">
+<i class="bi bi-person-badge"></i>
+Lecturers
+</a>
+</li>
+
+<li>
+<a href="courses.html">
+<i class="bi bi-book"></i>
+Courses
+</a>
+</li>
+
+<li>
+<a href="assessments.html">
+<i class="bi bi-journal-check"></i>
+Assessments
+</a>
+</li>
+
+<li>
+<a href="exams.html">
+<i class="bi bi-calendar-event"></i>
+Examinations
+</a>
+</li>
+
+<li>
+<a href="attendance.html">
+<i class="bi bi-check2-square"></i>
+Attendance
+</a>
+</li>
+
+<li>
+<a href="results.html">
+<i class="bi bi-bar-chart"></i>
+Results
+</a>
+</li>
+
+<li>
+<a href="reports.html">
+<i class="bi bi-file-earmark-text"></i>
+Reports
+</a>
+</li>
+
+<li>
+<a href="notifications.html">
+<i class="bi bi-bell"></i>
+Notifications
+</a>
+</li>
+
+<li>
+<a href="analytics.html">
+<i class="bi bi-graph-up"></i>
+Analytics
+</a>
+</li>
+
+<li>
+<a href="settings.html">
+<i class="bi bi-gear"></i>
+Settings
+</a>
+</li>
+
+<li>
+
+<a href="#" id="logoutBtn">
+
+<i class="bi bi-box-arrow-right"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- MAIN -->
+
+<main class="main">
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+<div class="left-top">
+
+<button id="menuBtn">
+
+<i class="bi bi-list"></i>
+
+</button>
+
+<div>
+
+<h3>Dashboard</h3>
+
+<small id="welcomeText">
+
+Loading...
+
+</small>
+
+</div>
+
+</div>
+
+<div class="right-top">
+
+<i class="bi bi-search"></i>
+
+<i class="bi bi-bell"></i>
+
+<div class="profile">
+
+<i class="bi bi-person-circle"></i>
+
+<span id="userName">
+
+Admin
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<h2>
+
+Academic Management System
+
+</h2>
+
+<p>
+
+Manage students, lecturers, courses, assessments and examinations.
+
+</p>
+
+</div>
+
+<div>
+
+<h4 id="todayDate">
+
+Loading...
+
+</h4>
+
+<p id="academicInfo">
+
+Academic Year
+
+</p>
+
+</div>
+
+</section>
+
+<!-- LIVE STATS -->
+
+<section class="stats-grid">
+
+<div class="stat-card">
+
+<i class="bi bi-people"></i>
+
+<h2 id="studentsCount">
+
+0
+
+</h2>
+
+<p>Students</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="bi bi-person-badge"></i>
+
+<h2 id="lecturersCount">
+
+0
+
+</h2>
+
+<p>Lecturers</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="bi bi-book"></i>
+
+<h2 id="coursesCount">
+
+0
+
+</h2>
+
+<p>Courses</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="bi bi-calendar-event"></i>
+
+<h2 id="examsCount">
+
+0
+
+</h2>
+
+<p>Examinations</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="bi bi-journal-check"></i>
+
+<h2 id="assessmentCount">
+
+0
+
+</h2>
+
+<p>Assessments</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="bi bi-bar-chart"></i>
+
+<h2 id="resultsCount">
+
+0
+
+</h2>
+
+<p>Results</p>
+
+</div>
+
+</section>
+
+<!-- DASHBOARD GRID -->
+
+<section class="dashboard-grid">
+
+<div class="left-column">
+
+<div class="widget">
+
+<h4>
+
+Today's Tasks
+
+</h4>
+
+<div id="todayTasks">
+
+Loading...
+
+</div>
+
+</div>
+
+<div class="widget">
+
+<h4>
+
+Recent Activities
+
+</h4>
+
+<div id="activities">
+
+Loading...
+
+</div>
+
+</div>
+
+<div class="widget">
+
+<h4>
+
+Recent Students
+
+</h4>
+
+<div id="recentStudents">
+
+Loading...
+
+</div>
+
+</div>
+
+<div class="widget">
+
+<h4>
+
+Recent Results
+
+</h4>
+
+<div id="recentResults">
+
+Loading...
+
+</div>
+
+</div>
+
+</div>
+
+<div class="right-column">
+
+<div class="widget">
+
+<h4>
+
+Quick Actions
+
+</h4>
+
+<div class="quick-grid">
+
+<button class="btn btn-primary">
+
+Add Student
+
+</button>
+
+<button class="btn btn-success">
+
+Add Lecturer
+
+</button>
+
+<button class="btn btn-warning">
+
+Create Assessment
+
+</button>
+
+<button class="btn btn-info">
+
+Schedule Exam
+
+</button>
+
+<button class="btn btn-secondary">
+
+Attendance
+
+</button>
+
+<button class="btn btn-danger">
+
+Upload Results
+
+</button>
+
+</div>
+
+</div>
+
+<div class="widget">
+
+<h4>
+
+Upcoming Exams
+
+</h4>
+
+<div id="upcomingExams">
+
+Loading...
+
+</div>
+
+</div>
+
+<div class="widget">
+
+<h4>
+
+Notifications
+
+</h4>
+
+<div id="notifications">
+
+Loading...
+
+</div>
+
+</div>
+
+<div class="widget">
+
+<h4>
+
+Academic Calendar
+
+</h4>
+
+<div id="calendar">
+
+Loading...
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<script type="module"
+src="js/dashboard.js">
+
+</script>
+
+</body>
+
+</html>

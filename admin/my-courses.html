@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartGrade | My Courses</title>
+
+    <link rel="stylesheet" href="css/my-courses.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Overlay -->
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <h2>SmartGrade</h2>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="#">
+                    <i class="fas fa-book"></i>
+                    My Courses
+                </a>
+            </li>
+
+            <li>
+                <a href="attendance.html">
+                    <i class="fas fa-user-check"></i>
+                    Attendance
+                </a>
+            </li>
+
+            <li>
+                <a href="assessments.html">
+                    <i class="fas fa-file-alt"></i>
+                    Assessments
+                </a>
+            </li>
+
+            <li>
+                <a href="exams.html">
+                    <i class="fas fa-calendar"></i>
+                    Exams
+                </a>
+            </li>
+
+            <li>
+                <a href="results.html">
+                    <i class="fas fa-chart-bar"></i>
+                    Results
+                </a>
+            </li>
+
+            <li>
+                <a href="reports.html">
+                    <i class="fas fa-file-pdf"></i>
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    <i class="fas fa-user"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+
+    <div class="wrapper">
+
+        <!-- Mobile Header -->
+
+        <header class="mobile-header">
+
+            <button id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <h2>My Courses</h2>
+
+            <div id="userName">
+                Lecturer
+            </div>
+
+        </header>
+
+        <!-- Topbar -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>My Courses</h1>
+
+                <p id="todayDate">
+                    Loading...
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3 id="welcomeText">
+                    Welcome Back
+                </h3>
+
+            </div>
+
+        </header>
+
+        <!-- Main -->
+
+        <main>
+
+            <!-- Hero -->
+
+            <section class="hero">
+
+                <div>
+
+                    <h2>
+                        My Teaching Dashboard
+                    </h2>
+
+                    <p>
+                        Manage your courses and academic activities.
+                    </p>
+
+                </div>
+
+                <button id="refreshBtn">
+
+                    <i class="fas fa-sync"></i>
+
+                    Refresh
+
+                </button>
+
+            </section>
+
+            <!-- Stats -->
+
+            <section class="stats">
+
+                <div class="stat-card">
+
+                    <i class="fas fa-book"></i>
+
+                    <h2 id="courseCount">0</h2>
+
+                    <p>Courses</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="fas fa-users"></i>
+
+                    <h2 id="studentCount">0</h2>
+
+                    <p>Students</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="fas fa-file-alt"></i>
+
+                    <h2 id="assessmentCount">0</h2>
+
+                    <p>Assessments</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="fas fa-calendar"></i>
+
+                    <h2 id="examCount">0</h2>
+
+                    <p>Exams</p>
+
+                </div>
+
+            </section>
+
+            <!-- Filters -->
+
+            <section class="filters">
+
+                <input
+                    type="text"
+                    id="searchCourse"
+                    placeholder="Search courses...">
+
+                <select id="semesterFilter">
+
+                    <option value="">
+                        All Semesters
+                    </option>
+
+                    <option value="1">
+                        Semester I
+                    </option>
+
+                    <option value="2">
+                        Semester II
+                    </option>
+
+                </select>
+
+                <select id="levelFilter">
+
+                    <option value="">
+                        All Levels
+                    </option>
+
+                    <option>100</option>
+                    <option>200</option>
+                    <option>300</option>
+                    <option>400</option>
+                    <option>500</option>
+
+                </select>
+
+                <select id="statusFilter">
+
+                    <option value="">
+                        All Status
+                    </option>
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+            </section>
+
+            <!-- Course Grid -->
+
+            <section
+                class="course-grid"
+                id="courseGrid">
+
+            </section>
+
+            <!-- Empty -->
+
+            <section
+                class="empty-state"
+                id="emptyState"
+                style="display:none;">
+
+                <i class="fas fa-book-open"></i>
+
+                <h2>
+                    No Courses Yet
+                </h2>
+
+                <p>
+                    Create your first course.
+                </p>
+
+                <button id="emptyCreateBtn">
+                    Create Course
+                </button>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- FAB -->
+
+    <button
+        class="fab"
+        id="fabBtn">
+
+        <i class="fas fa-plus"></i>
+
+    </button>
+
+    <!-- Course Details Modal -->
+
+    <div
+        class="modal"
+        id="courseModal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>
+                    Course Details
+                </h2>
+
+                <button id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+
+            </div>
+
+            <div id="courseDetails"></div>
+
+        </div>
+
+    </div>
+
+    <!-- Create Course Modal -->
+
+    <div
+        class="modal"
+        id="createCourseModal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>
+
+                    <i class="fas fa-plus-circle"></i>
+
+                    Create Course
+
+                </h2>
+
+                <button id="closeCreateModal">
+
+                    <i class="fas fa-times"></i>
+
+                </button>
+
+            </div>
+
+            <form id="createCourseForm">
+
+                <input
+                    type="text"
+                    id="courseCode"
+                    placeholder="Course Code"
+                    required>
+
+                <input
+                    type="text"
+                    id="courseTitle"
+                    placeholder="Course Title"
+                    required>
+
+                <input
+                    type="text"
+                    id="department"
+                    placeholder="Department"
+                    required>
+
+                <select id="level" required>
+
+                    <option value="">
+                        Select Level
+                    </option>
+
+                    <option>100</option>
+                    <option>200</option>
+                    <option>300</option>
+                    <option>400</option>
+                    <option>500</option>
+
+                </select>
+
+                <select id="semester" required>
+
+                    <option value="">
+                        Semester
+                    </option>
+
+                    <option value="1">
+                        Semester I
+                    </option>
+
+                    <option value="2">
+                        Semester II
+                    </option>
+
+                </select>
+
+                <input
+                    type="number"
+                    id="creditHours"
+                    placeholder="Credit Hours"
+                    required>
+
+                <input
+                    type="text"
+                    id="academicYear"
+                    placeholder="Academic Year"
+                    required>
+
+                <input
+                    type="number"
+                    id="capacity"
+                    placeholder="Maximum Students"
+                    value="100">
+
+                <textarea
+                    id="description"
+                    placeholder="Course Description"></textarea>
+
+                <div class="create-actions">
+
+                    <button
+                        type="button"
+                        id="cancelCreate">
+
+                        Cancel
+
+                    </button>
+
+                    <button
+                        type="submit">
+
+                        Create Course
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Course Card Template -->
+
+    <template id="courseCardTemplate">
+
+        <div class="course-card">
+
+            <div class="course-top">
+
+                <h3 class="course-code"></h3>
+
+                <span class="status"></span>
+
+            </div>
+
+            <h4 class="course-title"></h4>
+
+            <div class="course-info"></div>
+
+            <div class="course-actions">
+
+                <button class="viewBtn">
+                    View
+                </button>
+
+                <button class="studentsBtn">
+                    Students
+                </button>
+
+                <button class="attendanceBtn">
+                    Attendance
+                </button>
+
+                <button class="assessmentBtn">
+                    Assessments
+                </button>
+
+                <button class="examBtn">
+                    Exams
+                </button>
+
+                <button class="resultBtn">
+                    Results
+                </button>
+
+            </div>
+
+        </div>
+
+    </template>
+
+    <script type="module" src="js/my-courses.js"></script>
+
+</body>
+
+</html>
