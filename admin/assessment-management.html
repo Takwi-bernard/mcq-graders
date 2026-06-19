@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SmartGrade | Assessments</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/assessment-management.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div>
+<h1>Assessments</h1>
+<p id="courseName">Loading...</p>
+</div>
+
+<button id="createAssessmentBtn">
+<i class="fas fa-plus"></i>
+Create Assessment
+</button>
+
+</header>
+
+<main>
+
+<div id="assessmentContainer">
+
+<div class="loading">
+
+<i class="fas fa-spinner fa-spin"></i>
+
+<p>Loading assessments...</p>
+
+</div>
+
+</div>
+
+</main>
+
+<template id="assessmentTemplate">
+
+<div class="assessment-card">
+
+<div class="card-top">
+
+<h2 class="title"></h2>
+
+<span class="status"></span>
+
+</div>
+
+<div class="details">
+
+<p class="type"></p>
+
+<p class="marks"></p>
+
+<p class="duration"></p>
+
+</div>
+
+<div class="actions">
+
+<button class="manageBtn">
+
+Manage
+
+</button>
+
+<button class="editBtn">
+
+Edit
+
+</button>
+
+<button class="deleteBtn">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+</template>
+
+<script type="module"
+src="js/assessment-management.js">
+
+</script>
+
+</body>
+</html>

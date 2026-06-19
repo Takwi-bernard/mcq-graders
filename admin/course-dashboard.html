@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Course Dashboard</title>
+
+<link rel="stylesheet"
+href="css/course-dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<main class="container">
+
+<a href="my-courses.html" class="backBtn">
+<i class="fas fa-arrow-left"></i>
+Back to My Courses
+</a>
+
+<section class="courseHeader">
+
+<div>
+
+<h1 id="courseCode">
+Loading...
+</h1>
+
+<h2 id="courseTitle">
+Loading...
+</h2>
+
+<p>
+
+<span id="department"></span>
+
+|
+
+Level
+
+<span id="level"></span>
+
+|
+
+Semester
+
+<span id="semester"></span>
+
+</p>
+
+</div>
+
+<span class="status"
+id="status">
+
+Active
+
+</span>
+
+</section>
+
+<section class="stats">
+
+<div class="card">
+
+<h2 id="studentCount">
+
+0
+
+</h2>
+
+<p>Students</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="assessmentCount">
+
+0
+
+</h2>
+
+<p>Assessments</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="examCount">
+
+0
+
+</h2>
+
+<p>Exams</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="attendanceCount">
+
+0
+
+</h2>
+
+<p>Attendance</p>
+
+</div>
+
+</section>
+
+<section class="dashboardGrid">
+
+<button id="studentsBtn">
+
+<i class="fas fa-users"></i>
+
+Students
+
+</button>
+
+<button id="attendanceBtn">
+
+<i class="fas fa-user-check"></i>
+
+Attendance
+
+</button>
+
+<div class="dashboard-card">
+    <i class="fas fa-file-alt"></i>
+
+    <h3>Assessments</h3>
+
+    <p>Create and manage course assessments.</p>
+
+    <button id="assessmentBtn">
+        Manage Assessments
+    </button>
+</div>
+
+<button id="examBtn">
+
+<i class="fas fa-calendar-alt"></i>
+
+Exams
+
+</button>
+
+<button id="resultBtn">
+
+<i class="fas fa-chart-bar"></i>
+
+Results
+
+</button>
+
+<button id="reportBtn">
+
+<i class="fas fa-file-pdf"></i>
+
+Reports
+
+</button>
+
+</section>
+
+<section class="activity">
+
+<h2>
+
+Recent Activities
+
+</h2>
+
+<div id="activityList">
+
+No activities available.
+
+</div>
+
+</section>
+
+</main>
+
+<script type="module"
+src="js/course-dashboard.js">
+</script>
+
+</body>
+
+</html>

@@ -436,10 +436,10 @@ View
 
 `;
 
-card
-.querySelector(".view")
-.onclick=
-()=>showCourse(course);
+card.querySelector(".view").addEventListener("click", () => {
+    window.location.href =
+    `course-dashboard.html?id=${course.id}`;
+});
 
 courseGrid.appendChild(card);
 
@@ -451,79 +451,7 @@ courseGrid.appendChild(card);
 SHOW COURSE
 ==================================*/
 
-function showCourse(course){
 
-courseDetails.innerHTML=`
-
-<h2>
-
-${course.course_code}
-
-</h2>
-
-<br>
-
-<h3>
-
-${course.course_title}
-
-</h3>
-
-<br>
-
-<p>
-
-Department:
-${course.department}
-
-</p>
-
-<p>
-
-Level:
-${course.level}
-
-</p>
-
-<p>
-
-Semester:
-${course.semester}
-
-</p>
-
-<p>
-
-Credits:
-${course.credit_hours}
-
-</p>
-
-<p>
-
-Academic Year:
-${course.academic_year}
-
-</p>
-
-<p>
-
-Capacity:
-${course.capacity}
-
-</p>
-
-<p>
-
-${course.description||""}
-
-</p>
-
-`;
-
-openCourse();
-
-}
 
 /*==================================
 CREATE COURSE
